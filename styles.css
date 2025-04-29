@@ -1,0 +1,298 @@
+/* Variables CSS */
+:root {
+    --primary: #3AAFA9;        /* Azul verdoso */
+    --secondary: #DEF2F1;      /* Gris azulado claro */
+    --dark: #17252A;           /* Gris oscuro profundo */
+    --light: #FEFFFF;          /* Blanco cálido */
+    --danger: #ee0202;         /* Rojo coral */
+    --transition: 0.3s ease;
+}
+
+/* Estilos globales */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    color: var(--dark);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 1rem;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+#theme-toggle {
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+#theme-toggle:hover {
+    background-color: var(--dark);
+}
+
+/* Formulario */
+.task-form {
+    margin-bottom: 1rem;
+}
+
+#add-task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#add-task-form input,
+#add-task-form select,
+#add-task-form button {
+    padding: 0.5rem;
+    border: 1px solid var(--dark);
+    border-radius: 4px;
+}
+
+#add-task {
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+    transition: background-color var(--transition);
+    height: 40px;
+    padding: 0 1rem;
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#add-task-form button:hover {
+    background-color: var(--dark);
+}
+
+/* Lista de tareas */
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--dark);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    background-color: var(--light);
+    transition: background-color var(--transition);
+}
+
+.task-list li:hover {
+    background-color: var(--secondary);
+}
+
+/* Filtros y contador */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.filters button {
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.filters button:hover {
+    background-color: var(--dark);
+}
+
+#task-counter {
+    font-size: 1rem;
+}
+
+/* Navegación */
+nav {
+    background-color: var(--primary);
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.nav-links li a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition);
+}
+
+.nav-links li a:hover {
+    color: var(--dark);
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Diseño responsive */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #add-task-form {
+        flex-wrap: nowrap;
+    }
+
+    #add-task-form input,
+    #add-task-form select {
+        flex: 1;
+        width: 100%;
+    }
+
+    .filters {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #add-task-form input,
+    #add-task-form select {
+        padding: 0.75rem;
+    }
+
+    .filters button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    footer p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Estado pendiente */
+#tPending {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 0.1rem 0.5rem;
+    border-radius: 5%;
+    box-shadow: #090909 0px 0px 5px;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #74a6a1;
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Animación para tareas pendientes */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px); /* Subida más grande */
+    }
+    50% {
+        transform: translateY(0); /* Vuelve al centro */
+    }
+    75% {
+        transform: translateY(-10px); /* Segunda subida */
+    }
+}
+
+#task-counter.bounce {
+    animation: bounce 5s infinite; /* Animación más lenta y continua */
+    color: rgb(253, 7, 7);
+    font-weight: bold; /* Hacerlo más llamativo */
+    font-size: larger;
+}
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navegación -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#tasks">Tareas</a></li>
+                <li><a href="#about">Acerca de</a></li>
+            </ul>
+        </nav>
+
+        <!-- Encabezado -->
+        <header>
+            <h1>Gestor de Tareas</h1>
+            <button id="theme-toggle">Tema Claro/Oscuro</button>
+        </header>
+
+        <!-- Formulario para agregar tareas -->
+        <section class="task-form">
+            <form id="add-task-form">
+                <input type="text" id="task-name" placeholder="Nombre de la tarea" required>
+                <input type="date" id="task-deadline" required>
+                <select id="task-priority">
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <button type="submit" id="add-task" >Agregar Tarea</button>
+            </form>
+        </section>
+
+        <!-- Lista de tareas -->
+        <section class="task-list">
+            <ul id="tasks">
+                <!-- Las tareas se generarán dinámicamente -->
+            </ul>
+        </section>
+
+        <!-- Filtros y contador -->
+        <section class="filters">
+            <button id="filter-all">Todas</button>
+            <button id="filter-completed">Completadas</button>
+            <button id="filter-pending">Pendientes</button>
+            <div id="tPending">
+            <p id="task-counter">Tareas restantes: 0</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Gestor de Tareas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
